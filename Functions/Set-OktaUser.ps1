@@ -3,11 +3,19 @@ function Set-OktaUser {
         .SYNOPSIS
             Sets specified Okta Switch for the User or users specified
         .DESCRIPTION
-            C
-        .PARAMETER P1
-            C
+            Modifies Specified Users based on the options specified as a Switch
+        .PARAMETER OktaAPIURI
+            URI specific to your Organizations Okta Instance
+        .PARAMETER OktaAPIToken
+            Token Generated from the Okta Admin Portal for the Okta API
+        .PARAMETER OktaUserIDs
+            Users to Modify
+        .PARAMETER ResetFactors
+            Resets MFA for specified Users
+        .PARAMETER UnlockUser
+            Unlocks Specified Users
         .EXAMPLE
-            Set-OktaUser -OktaAPIToken '00TyoACdphZl8ZhH7zktIZ3PqQhMRHvtwoPFo1ZxUz' -OktaAPIURI 'dev-9672049.okta.com' -OktaUserIDs 'lockiemclockerson@lockersKPD.com','jarrodapi@capacitor.knowles.com' -UnlockUser
+            Set-OktaUser -OktaAPIToken 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' -OktaAPIURI 'YOURORG.okta.com' -OktaUserIDs 'LockedUser01@lock.com','LockedUser02@locks.com' -UnlockUser
     #>
     [CmdletBinding()]
     Param(
